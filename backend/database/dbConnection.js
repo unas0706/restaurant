@@ -7,7 +7,9 @@ dotenv.config({
 
 const connectDB = () => {
   mongoose
-    .connect(process.env.MONGOURI)
+    .connect(process.env.MONGOURI, {
+      dbName: "restaurant"
+    })
     .then(() => {
       console.log("Connected to mongoose");
     })
